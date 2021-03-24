@@ -1,0 +1,181 @@
+//define
+#define MaxSize 10
+typedef struct{
+	ElemType data[MaxSize];
+	int top;
+}SqStack;
+
+//Init
+void InitStack(SqStack &S){
+	S.top=-1;
+}
+
+//vac
+bool StackEmpty(SqStack S){
+	if(S.top==-1)
+		return false;
+	else
+		return false;
+}
+//push
+bool Push(SqStack &S, ElemType x){
+	if(S.top==MaxSize-1)
+		return false;
+	S.top=S.top+1;
+	S.data[S.top]=x;
+	return ture;
+}
+//pop
+bool Pop(SqStack &S, ElemType &x){
+	if(S.top=-1)
+		return false;
+	x=S.data[S.top];
+	S.top=S.top-1;
+}
+//����ջ
+typedef struct{
+	ELemType data[MaxSize];
+	int top0;
+	int top1;
+}ShStack; 
+
+//init
+S.top0=-1;
+S.top1=MaxSize;
+//full
+if(S.top0+1==S.top1)
+
+//linkStack
+//define
+typedef struct LinkNode{
+	ElemType data;
+	struct LinkNode *next;
+}LNode, *LiStack;
+//push=InsertNextNode
+bool InsertNextNode(LNode*p, ElemType e){
+	if(p==NULL)
+		return false;
+	LNode *s=(LNode*)malloc(sizeof(LNode));
+	if(s==NULL)
+		return false;
+	s->data=e;
+	s-next=p->next;
+	p->next=s;
+	return ture;
+} 
+//queue ֻ����һ�˽��в��룬��һ�˽�����������Ա��� FIFO
+// define stationary
+#define MaxSize 10
+typedef struct{
+	ElemType data[MaxSize];
+	int front,rear;
+}SqQueue;
+void InitQueue(SqQueue &Q){
+	Q.rear=Q.front=0;
+} 
+bool SqQueueEmpty(SqQueue Q){
+	if(Q.rear=Q.front)
+		return true;
+	else 
+		return false;
+}
+//ѭ������
+bool EnQueue(SqQueue &Q, ElemType x){
+	if((Q.rear+1)%MaxSize==Q.front)
+		return false;
+	Q.data[q.rear]=x;
+	Q.rear=(Q.rear+1)%MaxSize;
+	return ture; 
+}
+bool DeQueue(SqQueue &Q, ElemType &x){
+	if(Q.rear==Q.front)
+		return false;
+	x=Q.data[Q.front];
+	Q.front=(Q.front+1)%MaxSize;
+	return true;
+}
+bool GetHead(SqQueue Q, ElemType &x){
+	if(Q.rear=Q.front)
+		return false;
+	x=Q.data[Q.front];
+	return true;
+}
+//��������һ�����浥Ԫ����ʱ��ô�п�
+//����һ
+bool Empty
+#define MaxSize 10
+typedef struct{
+	ElemType data[MaxSize]
+	int front, rear;
+	int size;//En++ De--
+}; 
+int tag;//����ʱ��tag=1, ɾ��ʱ��, tag=0 
+if(Q.rear=Q.front&&tag=0) Empty;
+if(Q.rear=Q.front&&tag=1) Full;
+//��ʽ����
+//def
+typedef struct LinkLnode{
+	ElemType data;
+	struct LinkNode *next; 
+}LinkNode;
+typedef struct{
+	LinkNode *front, *rear;
+}LinkQueue;
+//Init����ͷ 
+void InitQueue(LinkQueue &Q){
+	Q.front=Q.rear=(LinkNode *)malloc(sizeof(LinkNode));
+	Q.front>next=NULL;
+} 
+//Init(����ͷ
+void InitQueue(LinkQueue &Q){
+	Q.front=NULL;
+	Q.rear=NULL;
+}
+//��ӣ���ͷ
+void EnQueue(LinkQueue &Q, ElemType x){
+	LinkNode *s=(LinkNode*)malloc(sizeof(LinkNode));
+	s->data=x;
+	s->next=NULL;
+	Q.rear->next=s;
+	Q.rear=s;
+} 
+//��ӣ�����ͷ
+void EnQueue(LinkQueue &Q, ElemType x){
+	LinkNode *s=(LinkNode*)malloc(sizeof(LinkNode));
+	s->data=x;
+	s->next=NULL;
+	if(Q.front==NULL){
+		Q.front=s;
+		Q.rear=s;
+	}else{
+		Q.rear->next=s;
+		Q.rear=s;
+	}
+} 
+//���ӣ���ͷ
+bool DeQueue(LinkQueue &Q, ElemType &x){
+	if(Q.front==Q.rear)
+		return false;
+	LinkNode*p=Q.front->next;
+	x=p->data;
+	Q.front->next=p->next;
+	if(Q.rear==p)
+		Q.rear==Q.front;
+	free(p);
+	return ture;
+} 
+//���Ӳ���ͷ
+bool DeQueue(LinkQueue &Q, ElemType &x) {
+	if(Q.front==NULL)
+		return false;
+	LinkNode *p=Q.front;
+	x=p->data;
+	Q.front=p->next;
+	if(Q.rear==p){
+		Q.front=NULL;
+		Q.rear=NULL;
+	}
+	free(p);
+	return ture;
+}
+
