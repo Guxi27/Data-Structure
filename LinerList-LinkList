@@ -1,0 +1,178 @@
+typedef struct LinkList{
+	ElemType data;
+	struct LNode *next;
+}LNode, *LinkList;
+//��ͷ 
+bool InitLinkList(Linklist &L){
+	L=(LNode*)malloc(sizeof(LNode));
+	if(L=NULL)//�ڴ治�㣬����ʧ��
+		return false;
+	L-next=NULL;
+	return true; 
+}
+//����ͷ
+bool InitLinnList(Linklist &L){
+	L=NULL;
+	return true;
+} 
+//��λ�����
+bool InsertList(LinkList &L, int i, ElemType e){
+	if(i<1)
+		return false;
+	L.Node *p;
+	int j=0;
+	P=L;
+	while(p!=NULL&&j<i-1){
+		p=p->next;
+		j++;
+	}
+	if(p==NULL)
+		return false;
+	LNode *s=(LNode)malloc(sizeof(LNode));
+	s->data=e;
+	s->next=p->next;
+	p->next=s;
+	return ture;
+}
+//��λ����루����ͷ���
+bool InsertLinkList(LinkList&L, int i, ElemType e){
+	if(i<1)
+		return false;
+	if(i=1){
+		LNode*s=(LNode*)malloc(sizeof(LNode));
+		s->data=e;
+		s->next=L;
+		L=s;
+		return ture; 
+	}
+	LNode *p;
+	int j=1;
+	p=L;
+	while(p!=NULL&&j<j-1){
+		p=p->next;
+		j++;
+	}
+	if(p==NULL)
+		return false;
+	LNode *s=(LNode*)malloc(sizeof(LNode));
+	if(s==NuLL)
+		return false;
+	s->data=e;
+	s->next=p->next;
+	p->next=s;
+	return ture; 
+} 
+//ǰ��
+bool InsertPriorNode(LNode*p, ElemType e){
+	if(p==NULL)
+		return false;
+	LNode *s=(LNode*)malloc(sizeof(LNode));
+	s->next=p-next;
+	p->next=s;
+	s->data=p->data;
+	p->data=e
+	return ture; 
+}
+//ɾ��
+bool ListDelete(LinkList&L, int i, Elemtype &e){
+	if(i<1)
+		return false;
+	LNode*p;
+	int j=0;
+	p=L;
+	while(p!=NULL&&j<i-1){
+		p=p->next;
+		j++; 
+	}
+	if(p==NULL)
+		return false;
+	if(p->next=NULL)
+		return false;
+	e=p->data;
+	LNode *q=p->next;
+	p->next=q->next;
+	free(q);
+	return ture;
+} 
+//�������Ľ���
+//β�巨
+LinkList List_tailInsert(LinkList &L){
+	int x;
+	L=(Linklist)malloc(sizeof(LNode));
+	LNode *s, *r=L;
+	scanf("%d", &x);
+	while(x!=999){
+		s=(LNode*)malloc(sizeof(LNode));
+		s->data=x;
+		r->next=s;
+		r=s;
+		scanf("%d", &x); 
+	}
+} 
+//ͷ�巨
+LinkList List_headInsert(LinkList &L){
+	int x;
+	L=(Linklist)malloc(sizeof(LNode));
+	L->next=NULL;
+	LNode *s;
+	scanf("%d", &x);
+	while(x!=999){
+		s=(LNode*)malloc(sizeof(LNode));
+		s-data=x;
+		s->next=L->next;
+		L->next=s;
+		scanf("%d", &x);
+	}
+	return L;
+}
+//˫����
+typedef struct DNode{
+	ElemType data;
+	struct DNode *prior, *next;
+}DNode, *DLinkList;
+
+bool InsertNextDNode(DNode*P, DNode*s){
+	if(p==NULL||s==NULL)
+		return false;
+	s->next=p->next;
+	if(p-next!=NULL)
+		p->next->prior=s;
+	s->prior=p;
+	p->next=s;
+} 
+bool DeleteNextDnode(DNode *p){
+	if(p=NULL)
+		return false;
+	DNode *q=p->next;
+	if(q=NULL)
+		return false;
+	p->next=q->next;
+	if(q->next!NULL)
+		q-next->prior=p;
+	free(q);
+	return ture;
+}
+void Destory(DLinkList &L){
+	while(L-next!=NULL)
+		DeleteNextDnode(L);
+	free(L);
+	L=NULL;
+}
+//ѭ������
+bool InitList(LinkList &L){
+	L=(LNode*)malloc(sizeof(LNode));
+	if(L==NULL)
+	reutrn false;
+	L->next=L;
+	return true;
+} 
+//��̬����
+#define MaxSize 10;
+typedef sturct{
+	ElemType data;
+	int next;
+}SLinkList[MaxSize]; 
+int main(void){
+	LinkList L;//����һ��ָ��������ָ�룬��û�д������ 
+	InitList (L);
+}
