@@ -1,0 +1,77 @@
+//��ջʵ�ַ���ƥ��
+// ÿɨ�赽һ����������ջ��ɨ�赽������
+//��ջ����ɨ�������ջ�ǿգ�����0
+//˳��ջ�㷨ʵ��
+Void signMatch(){
+	SqStack s;
+	char ch, t;
+	InitStack(&s);
+	while((ch=getchar()!=EOF)){
+		if(ch=='(')
+			push(&S,ch);
+		if(ch==')'){
+			if(emptyStack(s))
+				return 0;
+			pop(top, &ch);
+		}
+	}
+	if(EmptyStack(s))
+		return 1;
+}
+//��ջ
+Void SignMatch(){
+	LinkStack top;
+	char ch;
+	InitStack(top);
+	while((ch=getchar()!=EOF)){
+		if(ch=='(')
+			push(top,ch);
+		 
+	}
+} 
+
+//��ʽ�洢�Ķ���
+typedef struct qNode{
+	ElemType data;
+	struct Node *next;
+}QueueNode;
+typedef struct{
+	queueNode *front;
+	queueNode *rear;
+}LinkQueue;
+//������ͷ���Ŀն� 
+void InitQueue(LinkQueue *q){
+	QueueNode *s;
+	if(!q=(LinkQueue*)malloc(sizeof(LinkQueue)))
+		return false;
+	if(!s=(LinkQueue*)malloc(sizeof(QueueNode)))
+		return false;
+		s->next=NULL;
+		q->front=q->rear=s;
+		return ture;
+} 
+//�п�
+void EmptyQueue(LinkQueue *q){
+	return q->front==q->rear
+} 
+//���
+void EnQueue(LinkQueue *q, ElemType x){
+	QueueNode *s;
+	if(!s=(QueueNode*)malloc(sizeof(queueNode)))
+		return false;
+	s->data=x;
+	s->next=q->rear->next;
+	q->rear->next=s;
+	q->rear=s;
+
+//����
+void DeQueue(LinkQueue *q, ElemType *x){
+	QueueNode *s=q->front->next;
+	if(EmptyQueue(q))
+		return false;
+	*x=s->data;
+	q->front->next=s->next;
+	free(s);
+	if(q->front->next==NULL)
+		q->rear=q->front;9
+} 
