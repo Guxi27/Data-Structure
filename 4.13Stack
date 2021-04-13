@@ -1,0 +1,70 @@
+//˳��ջ
+typedef struct{
+	ElemType data[MaxSize];
+	int top
+}SqStack;
+//Init
+bool InitStack(SqStack *s){
+	if(!(s=(Sqstack *s)malloc(sizeof(SqStack))))
+		return false;
+	s->top=-1;
+	return ture;
+} 
+//Empty
+bool EmptyStack(SqStack s){
+	return s.top==-1?1:0;
+}
+//full
+bool FullStack(SqStack s){
+	return s.top==Maxsize-1?1:0;
+}
+//push
+bool PushStack(SqStack *s, ElemType x){
+	if(FullStack)
+		return false;
+	s.top++;
+	s[s.top]=x;
+	return ture;
+}
+//pop
+bool PopStack(SQstack *s, ElemType *x){
+	if(EmptyStack(s))
+		return false;
+	*x=s[s->top--];
+	return true;
+}
+int main(){
+	SqStack *s;
+}
+//��ջ
+//Def
+typedef struct Node{
+	ElemType data;
+	struct Node *next;
+}StackNode, *LinkStack;
+LinkStack top;
+//Init
+void InitLinkStack(LinkStack top){
+	top=NULL;
+} 
+//��ջ
+bool PushStack(LinkStack top, Elemtype x){
+	StackNode *s;
+	if(!(s=(StackNode*)malloc(sizeof(StackNode))))	
+		return fasle;
+	s->data=x;
+	s->next=top;
+	top=s;
+	return ture;
+} 
+//��ջ
+bool PopStack(LinkStack top, ElemType *x){
+	if(EmptyStack(top))
+		return false;
+	StackNode *s;
+	*x=top->data;
+	s=top;
+	top=top->next;
+	free(s);
+	return ture;
+} 
